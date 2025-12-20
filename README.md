@@ -141,29 +141,6 @@ mvn spring-boot:run
 | address   | varchar | 50   | 0      | 否   | 地址     |      |
 | phone     | varchar | 15   | 0      | 否   | 电话     |      |
 
-### 功能展示
-#### 1.	首页登陆
-管理者账号：123456/123456
-读者账号：10000/123456
-<img src="./preview/5.png">
-
-#### 2.	管理员系统
-用登陆进入
-##### 2.1 图书管理
-<img src="./preview/6.png">
-
-##### 2.2 图书详情
-<img src="./preview/7.png">
-
-##### 2.3 读者管理
-<img src="./preview/8.png">
-
-##### 2.4 借还管理
-<img src="./preview/9.png">
-
-#### 3.	读者系统
-##### 3.1 查看全部图书
-<img src="./preview/10.png">
 
 ##### 3.2 个人信息查看，可以修个个人信息
 <img src="./preview/11.png">
