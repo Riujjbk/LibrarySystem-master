@@ -142,10 +142,5 @@ mvn spring-boot:run
 | phone     | varchar | 15   | 0      | 否   | 电话     |      |
 
 
-##### 3.2 个人信息查看，可以修个个人信息
-<img src="./preview/11.png">
-
-##### 3.3 个人借阅情况查看
-<img src="./preview/12.png">
 
 
