@@ -1,0 +1,130 @@
+/* 
+ * 全局应用样式
+ * 定义了基本的布局变量、导航栏、侧边栏、卡片容器以及通用组件样式
+ */
+:root {
+    /* 品牌主色调 */
+    --brand-color: #4f46e5;
+    /* 主要文字颜色 */
+    --text-main: #111827;
+    /* 次要文字颜色 */
+    --text-sub: #6b7280;
+    /* 页面主背景色 */
+    --bg-main: #f6f7f9;
+    /* 卡片/容器背景色 */
+    --bg-card: #ffffff;
+    /* 边框颜色 */
+    --border: #e5e7eb;
+}
+
+/* 布局基础设置 */
+body {
+    background: var(--bg-main);
+}
+
+/* 顶部导航栏覆盖样式 */
+.navbar {
+    background: var(--bg-card) !important;
+    border-bottom: none;
+    box-shadow: none !important;
+}
+
+/* 导航栏品牌Logo文字 */
+.navbar-brand {
+    color: var(--text-main) !important;
+    font-weight: 600;
+}
+
+/* 导航链接颜色 */
+.navbar .nav-link {
+    color: var(--text-sub) !important;
+}
+
+/* 导航链接悬停效果 */
+.navbar .nav-link:hover {
+    color: var(--brand-color) !important;
+}
+
+/* 侧边栏样式 */
+.sidebar {
+    background: var(--bg-card) !important;
+    box-shadow: none !important;
+    border-right: 1px solid var(--border);
+}
+
+/* 内容区域内边距 */
+.content-area {
+    padding: 24px !important;
+}
+
+/* 卡片和容器通用样式 */
+.container-box,
+.welcome-card,
+.stats-card,
+.search-section,
+.book-card,
+.profile-card,
+.action-card {
+    background: var(--bg-card) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 12px !important;
+    box-shadow: none !important;
+}
+
+/* 操作图标颜色 */
+.action-icon {
+    color: var(--brand-color) !important;
+}
+
+/* 统计数字颜色 */
+.stats-number {
+    color: var(--text-main) !important;
+}
+
+/* 表单控件和下拉框圆角 */
+.form-control,
+.form-select {
+    border-radius: 8px !important;
+}
+
+/* 主要按钮样式 */
+.btn-primary {
+    background: var(--brand-color);
+    border-color: var(--brand-color);
+}
+
+/* 轮廓型主要按钮样式 */
+.btn-outline-primary {
+    color: var(--brand-color);
+    border-color: var(--brand-color);
+}
+
+/* 轮廓型主要按钮悬停效果 */
+.btn-outline-primary:hover {
+    background: var(--brand-color);
+    color: #fff;
+}
+
+/* 图书封面占位背景 */
+.book-image {
+    background: #eef2ff !important;
+    color: var(--brand-color) !important;
+}
+
+/* 行内搜索框布局 */
+.search-inline {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+}
+
+/* 搜索输入框自动伸缩 */
+.search-inline .form-control {
+    flex: 1 1 auto;
+}
+
+/* 搜索按钮固定宽度 */
+.search-inline .btn {
+    flex: 0 0 140px;
+}

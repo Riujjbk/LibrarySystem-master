@@ -1,0 +1,86 @@
+/*
+ * 登录页面专用样式
+ */
+html,
+body {
+  background: var(--neutral-50);
+  min-height: 100vh;
+}
+
+/* 登录页整体网格布局：左侧信息，右侧表单 */
+.login-page {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+  padding: var(--space-xl);
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+/* 左侧品牌Logo区域 */
+.login-left .brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  color: var(--text-primary);
+  font-weight: 600;
+  margin-bottom: var(--space-lg);
+}
+
+/* 左侧大标题 */
+.login-left .title {
+  font-size: 28px;
+  color: var(--text-primary);
+  margin-bottom: var(--space-sm);
+}
+
+/* 左侧副标题 */
+.login-left .subtitle {
+  color: var(--text-secondary);
+  margin-bottom: var(--space-lg);
+}
+
+/* 左侧特性列表 */
+.login-left .bullets {
+  color: var(--text-secondary);
+  margin: 0 0 var(--space-lg);
+  padding-left: var(--space-lg);
+}
+
+/* 左侧插图区域 */
+.login-left .illustration {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-1);
+}
+
+/* 右侧登录卡片 */
+.login-right .card {
+  background: var(--neutral-0);
+  border: 1px solid var(--neutral-300);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-2);
+  padding: var(--space-xl);
+}
+
+/* 表单输入框圆角 */
+.form-control {
+  border-radius: var(--radius-sm);
+}
+
+/* 提示框圆角 */
+.alert {
+  border-radius: var(--radius-md);
+}
+
+/* 响应式适配：小于992px时变为单列布局，隐藏左侧插图 */
+@media (max-width: 992px) {
+  .login-page {
+    grid-template-columns: 1fr;
+  }
+
+  .login-left .illustration {
+    display: none;
+  }
+}

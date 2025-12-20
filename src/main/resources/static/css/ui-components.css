@@ -1,0 +1,254 @@
+/* 
+ * 顶部应用栏 (AppBar) 样式
+ * 包含品牌Logo、中间占位、右侧操作区（通知、头像）
+ */
+.ui-appbar {
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+  height: var(--appbar-height);
+  background: var(--neutral-0);
+  box-shadow: var(--shadow-1);
+  display: flex;
+  align-items: center;
+  padding: 0 var(--space-lg);
+}
+
+.ui-appbar .brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.ui-appbar .grow {
+  flex: 1;
+}
+
+.ui-appbar .actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+/* 用户头像样式 */
+.ui-appbar .avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--neutral-200);
+  cursor: pointer;
+  border: 1px solid var(--neutral-300);
+  transition: transform .1s ease, box-shadow .2s ease;
+}
+
+.ui-appbar .avatar:hover {
+  box-shadow: var(--shadow-1);
+  transform: translateY(-1px);
+}
+
+/* 
+ * 下拉菜单样式 
+ * 用于头像点击后的弹出菜单
+ */
+.ui-dropdown {
+  position: fixed;
+  z-index: 2000;
+  min-width: 200px;
+  background: var(--neutral-0);
+  border: 1px solid var(--neutral-300);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-2);
+  padding: 6px 0;
+}
+
+.ui-dropdown .item {
+  display: block;
+  padding: 10px 14px;
+  color: var(--text-primary);
+}
+
+.ui-dropdown .item:hover {
+  background: var(--neutral-100);
+}
+
+.ui-dropdown .item-danger {
+  color: var(--error-500);
+}
+
+.ui-dropdown .divider {
+  height: 1px;
+  background: var(--neutral-300);
+  margin: 6px 0;
+}
+
+/* 下拉菜单顶部小三角箭头 */
+.ui-dropdown::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: var(--neutral-0);
+  border-left: 1px solid var(--neutral-300);
+  border-top: 1px solid var(--neutral-300);
+  transform: rotate(45deg);
+  top: -6px;
+  right: 16px;
+}
+
+/* 
+ * 侧边栏布局样式
+ * 定义了左侧导航栏和右侧内容区的网格结构
+ */
+.ui-layout {
+  display: grid;
+  grid-template-columns: var(--sidebar-width) 1fr;
+  min-height: calc(100vh - var(--appbar-height));
+}
+
+.ui-sidebar {
+  background: var(--neutral-0);
+  box-shadow: var(--shadow-1);
+  padding: var(--space-md) 0;
+}
+
+.ui-sidebar .group {
+  margin-bottom: var(--space-sm);
+}
+
+.ui-sidebar .group .group-toggle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  color: var(--text-secondary);
+}
+
+.ui-sidebar .group .items {
+  display: none;
+}
+
+.ui-sidebar .group.open .items {
+  display: block;
+}
+
+.ui-sidebar a.item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-lg);
+  color: var(--text-secondary);
+}
+
+/* 侧边栏激活项样式 */
+.ui-sidebar a.item.active {
+  color: var(--primary-600);
+  border-left: 3px solid var(--primary-500);
+  background: var(--primary-50);
+}
+
+.ui-content {
+  padding: var(--space-lg);
+}
+
+/* 面板容器样式 */
+.ui-panel {
+  background: var(--neutral-0);
+  border: 1px solid var(--neutral-300);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-1);
+  padding: var(--space-lg);
+}
+
+/* 按钮通用样式覆盖 */
+.btn-primary {
+  background-color: var(--primary-500);
+  border-color: var(--primary-500);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-1);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-600);
+  border-color: var(--primary-600);
+}
+
+.btn-outline-primary {
+  color: var(--primary-600);
+  border-color: var(--primary-400);
+  border-radius: var(--radius-md);
+}
+
+.btn-outline-secondary {
+  color: var(--text-secondary);
+  border-color: var(--neutral-300);
+  border-radius: var(--radius-md);
+}
+
+.btn-danger {
+  background-color: var(--error-500);
+  border-color: var(--error-500);
+  border-radius: var(--radius-md);
+}
+
+.btn-success {
+  background-color: var(--success-500);
+  border-color: var(--success-500);
+  border-radius: var(--radius-md);
+}
+
+/* 表单输入框样式覆盖 */
+.form-control {
+  border-radius: var(--radius-sm);
+  border-color: var(--neutral-300);
+}
+
+.form-control:focus {
+  border-color: var(--primary-500);
+  box-shadow: 0 0 0 3px rgba(22, 119, 255, 0.15);
+}
+
+.is-invalid {
+  border-color: var(--error-500);
+}
+
+/* 表格样式优化 */
+.table thead th {
+  background: var(--neutral-100);
+  color: var(--text-secondary);
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: var(--neutral-50);
+}
+
+.table-hover tbody tr:hover {
+  background-color: var(--primary-50);
+}
+
+/* 提示框颜色定义 */
+.alert-success {
+  color: #135200;
+  background-color: #f6ffed;
+  border-color: #b7eb8f;
+}
+
+.alert-warning {
+  color: #612500;
+  background-color: #fff7e6;
+  border-color: #ffd591;
+}
+
+.alert-danger {
+  color: #a8071a;
+  background-color: #fff1f0;
+  border-color: #ffa39e;
+}
+
+.alert-info {
+  color: #003a8c;
+  background-color: #e6f7ff;
+  border-color: #91d5ff;
+}

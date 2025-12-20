@@ -1,0 +1,27 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/library?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: 77aspLQ53
+
+  # 移除JSP配置，使用纯HTML
+
+  # web:
+  #   resources:
+  #     static-locations: classpath:/static/  # Spring Boot默认配置，无需手动设置
+
+mybatis-plus:
+  type-aliases-package: com.library.bean
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath*:/mapper/**/*.xml
+
+logging:
+  level:
+    com.library: debug
+    org.springframework.web: debug
